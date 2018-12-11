@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WebsiteIntegration | Support++</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet">
+
+    <meta property="og:title" content="Support++ - WebsiteIntegration" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Integrate your " />
+    <meta property="og:url" content="https://wi.support-pp.de" />
+    <meta property="og:image" content="https://support-pp.de/assets/img/help.png" />
+
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="mb-4 navbar navbar-expand-lg navbar-dark unique-color-white">
+        <a class="navbar-brand" href="#" style="color:#2196F3; font-weight: bold;"><img src="https://support-pp.de/assets/img/help.png"
+                height="40" alt="">Support++</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+    </nav>
+
+
+    <div class="container darken-grey-text mb-4">
+        <h3 class="text-center font g mb-3 t-10">Support++ website integration</h3>
+        <h3 class="text-center font mb-3 size2">Your have a website? Now you can integration a support channel viewer
+            on your website.</h3>
+
+    </div>
+    <!--</div>-->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-7">
+
+            <div class="alert alert-danger none" id="noGrecaptcha" role="alert">
+                You are a bot? If not accept the google recaptcha.
+            </div>
+
+            <div class="alert alert-danger none" id="emailInUse" role="alert">
+                You email is allready in use!
+            </div>
+
+            <div class="alert alert-danger none" id="noEmail" role="alert">
+                You email is invalied!
+            </div>
+
+            <div class="alert alert-danger none" id="noAccept" role="alert">
+                Please accept the private police. And your older.
+            </div>
+
+            <form target="_top">
+                <input required type="email" id="email" placeholder="Type your email" size="40"><br><br>
+
+                <div class="custom-control custom-checkbox checkbox-warning-filled">
+                    <input type="checkbox" class="custom-control-input" name="cc2" id="checkAGB">
+                    <label class="custom-control-label" required for="checkAGB">I'm over 16 years and accept
+                        the private police. </label>
+                </div>
+
+                <div class="text-center darken-grey-text mt-3 mb-4">
+                    <div class="g-recaptcha" id="rcaptcha" data-sitekey="6Lf1-n8UAAAAADF14iPIVvuJhNhmNwlJkSMnb1iB"></div>
+                    <input class="btn btn-danger" onclick="CreateAPIToken();" value="Request API-Token">
+
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    </div>
+
+    <script>
+
+        function CreateAPIToken() {
+
+            var checkBox = document.getElementById("checkAGB").checked;
+
+            if (document.getElementById("email").value == "") {
+                document.getElementById("noEmail").classList.remove('none');
+                return;
+            } else {
+                document.getElementById("noEmail").classList.add('none');
+            }
+            if (grecaptcha.getResponse() == "") {
+                document.getElementById("noGrecaptcha").classList.remove('none');
+                console.log("Error, recaptcha!")
+                return;
+            } else {
+                document.getElementById("noGrecaptcha").classList.add('none');
+            }
+
+            if (!checkBox) {
+                document.getElementById("noAccept").classList.remove('none');
+                return;
+            } else {
+                document.getElementById("noAccept").classList.add('none');
+            }
+            console.log("test :: " + grecaptcha.getResponse())
+        }
+
+
+    </script>
+
+
+    <div class="text-center darken-grey-text mb-4">
+        <h3 class="text-center font g mb-3 t-10">Example:</h3>
+
+    </div>
+
+
+    <footer class="page-footer font-small blue-grey lighten-5">
+        <div class="container text-center text-md-left mt-3">
+            <div class="row mt-3 text-dark">
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <img id="img" src="https://sounds.support-pp.de/magiccoder-brand.png" width="300px;">
+                </div>
+                <div class="col"></div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Legal</h6>
+                    <hr class="grey darken-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+                    <p>
+                        <a class="text-dark" href="https://magiccoder.de/datenschutz">Datenschutz</a>
+                    </p>
+                    <p>
+                        <a class="text-dark" href="https://magiccoder.de/impressum">Impressum</a>
+                    </p>
+                    <p>
+                        <a class="text-dark" href="https://magiccoder.de">magiCCoder</a>
+                    </p>
+
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Projekts</h6>
+                    <hr class="grey darken-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+                    <p>
+                        <a class="text-dark" href="https://support-pp.de">Support++</a>
+                    </p>
+                    <p>
+                        <a class="text-dark" href="https://magiccoder-git.github.io">GitHub</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
