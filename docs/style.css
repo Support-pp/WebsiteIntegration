@@ -1,0 +1,92 @@
+
+.impressum{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 268px;
+    margin: 0 auto;
+    max-height: 100%;
+    background-image: url("../image/header-donation.jpg")
+}
+.slider_title {
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 88px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 96px;
+}
+.slider_title_1 {
+    color: black;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 88px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 96px;
+}
+.impressum_1{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 268px;
+    margin: 0 auto;
+    max-height: 100%;
+}
+.g{
+    color: #5C5C5C;
+}
+.t-10{
+    margin-top: 65px;
+}
+.size4{
+    font-size: 18px;
+}
+.size3{
+    font-size: 12px;
+    font-style: italic; 
+}
+.size2{
+    font-size: 13.5px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.features{
+    /*width: 60%;
+    margin-left: 35%;
+    margin-top: 17px;*/
+    
+    color: #369368;
+    border: #5C5C5C;
+}
+
+.center2{
+    margin-top: 25px;
+    margin-left: 27%;
+}
+
+@media (max-width: 575.98px) {
+    .margin-small {
+        margin-right: 11px;
+    }
+}
+.none{
+    display: none;
+    }
